@@ -1,0 +1,46 @@
+body {
+	background: #000;
+}
+.outer {
+	position:relative;
+}
+.sticky-header {
+	width: 100%;
+	height: 54px;
+	background: #ff0000;
+	border-bottom: 1px solid #000;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.container {
+	height: 3000px;
+	background: linear-gradient(green, yellow);
+}
+.outer {
+	height: 400px;
+	width: 100%;
+	position:relative;
+	border: 1px solid #fff;
+}
+.box1 {
+	width: 100%;
+	height: 100%;
+	background: #ff0000;
+	position: fixed;
+	z-index: 1;
+}
+.box2 {
+	width: 100%;
+	height: 100%;
+	background: #00ff00;
+	position: fixed;
+	z-index: 2;
+}
+.box3 {
+	width: 100%;
+	height: 100%;
+	background: #0000ff;
+	position: fixed;
+	z-index: 3;
+}
