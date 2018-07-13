@@ -4,30 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <title>title</title>
-    <link rel="stylesheet" type="text/css" href="./css/app.css">
 </head>
 
 <body>
-    <div class="outer">
-        <div class="sticky-header">
-            test
-        </div>
 
-        <div class="container">
-            <div class="outer">
-                <div class="box1">
-                </div>
-            </div>
-            <div class="outer">
-                <div class="box2">
-                </div>
-            </div>
-            <div class="outer">
-                <div class="box3">
-                </div>
-            </div>
-        </div>
-    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDh1JDtXvtHA-oy34Y2OHRv9i2fUNMFEqk",
+            authDomain: "test-project-866c8.firebaseapp.com",
+            databaseURL: "https://test-project-866c8.firebaseio.com",
+            projectId: "test-project-866c8",
+            storageBucket: "test-project-866c8.appspot.com",
+            messagingSenderId: "287191156079"
+        };
+        firebase.initializeApp(config);
+
+        // Get a reference to the database service
+        //var myUserId = firebase.auth().currentUser.uid;
+        var docRef = db.collection("events");
+
+        docRef.get().then(function(doc) {
+            if (doc.exists) {
+                console.log("Document data:", doc.data());
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
+    </script>
+
+
+
 </body>
 
 </html>
