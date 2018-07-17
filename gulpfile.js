@@ -50,27 +50,16 @@ gulp.task('clean', function () {
 });
  
 gulp.task('scripts', function() {
-  return gulp.src(['./src/js/jquery.js', 
-      './src/js/jquery1_12_4.js', 
-      './src/js/jquery-migrate.min.js', 
-      './src/js/jquery_ui.js', 
-      './src/js/jquery.themepunch.tools.min.js', 
-      './src/js/jquery.themepunch.essential.min.js', 
-      './src/js/jquery.themepunch.revololution.min.js', 
-      './src/js/lightbox.js', './src/js/photon.js', 
-      './src/js/position.min.js',  
-      './src/js/js_composer_front.min.js',  
-      './src/js/what-input.js', 
-      './src/js/foundation.js', 
-      './src/js/imageMapResizer.min.js', 
-      './src/js/tingle.js', 
-      './src/js/responsive_menu_pro.js', 
-      './src/js/app.js'])
+  return gulp.src(['./src/js/main.js'])
     .pipe(concat('app.js'))
     .pipe(gulp.dest('./dist/js/'))
     .pipe(reload({ stream:true }));
 });
 
+gulp.task('data', function() {
+  return gulp.src(['./src/data/**/*'])
+    .pipe(gulp.dest('./dist/data/'));
+});
 gulp.task('fonts', function() {
   return gulp.src(['./src/fonts/**/*'])
     .pipe(gulp.dest('./dist/fonts/'));
@@ -88,4 +77,4 @@ gulp.task('templates', function() {
   .pipe(reload({ stream:true }));
 });
 
-gulp.task('default', ['sass', 'html', 'images', 'serve']);
+gulp.task('default', ['sass', 'html', 'scripts', 'data', 'images', 'serve']);

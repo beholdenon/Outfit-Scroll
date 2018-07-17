@@ -1,46 +1,72 @@
-body {
-	background: #000;
+@mixin border {
+	border: 1px solid #ff0000;
 }
-.outer {
-	position:relative;
+h2 {
+	font-size: 100px;
 }
-.sticky-header {
-	width: 100%;
-	height: 54px;
-	background: #ff0000;
-	border-bottom: 1px solid #000;
-	position: fixed;
-	top: 0;
-	left: 0;
+p {
+	font-size: 20px;
 }
-.container {
-	height: 3000px;
-	background: linear-gradient(green, yellow);
+html {
+	font-size: 20px;
 }
-.outer {
-	height: 400px;
-	width: 100%;
-	position:relative;
-	border: 1px solid #fff;
-}
-.box1 {
-	width: 100%;
-	height: 100%;
-	background: #ff0000;
-	position: fixed;
-	z-index: 1;
-}
-.box2 {
-	width: 100%;
-	height: 100%;
-	background: #00ff00;
-	position: fixed;
-	z-index: 2;
-}
-.box3 {
-	width: 100%;
-	height: 100%;
-	background: #0000ff;
-	position: fixed;
-	z-index: 3;
+.row {
+	display: flex;
+	@include border;
+	position: relative;
+	.col {
+		z-index: 2;
+		display: flex;
+		flex: 1;
+  		position: relative;
+  		@include border;
+  		&:first-child {
+  			text-align: right;
+  		}
+		img {
+			max-height: 300px;
+		}
+		h2 {
+  			color: #fff;
+  			@include border;
+  			display: block;
+  			position: absolute;
+  			left: 0;
+  			top: 50%;
+  			font-size: 3rem;
+  			transform: translateY(-50%);
+		}
+		p {
+  			justify-content: center;
+  			align-items: center;
+  			@include border;
+  			display: block;
+  			font-size: .8rem;
+  			&.abs {
+  				position: absolute;
+  				bottom: -10px;
+  			}
+		}
+		@media only screen and (min-width: 600px) {
+			img {
+				max-height: 400px;
+			}
+			p {
+				font-size: 1rem;
+			}
+			h2 {
+				font-size: 5rem;
+			}
+		}
+	}
+	.bg {
+		position: absolute;
+		height: 70%;
+		width: 100%;
+		background: #000;
+		@include border;
+		z-index: 1;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 }

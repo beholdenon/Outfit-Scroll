@@ -1,45 +1,57 @@
-body {
-  background: #000; }
+h2 {
+  font-size: 100px; }
 
-.outer {
+p {
+  font-size: 20px; }
+
+html {
+  font-size: 20px; }
+
+.row {
+  display: flex;
+  border: 1px solid #ff0000;
   position: relative; }
-
-.sticky-header {
-  width: 100%;
-  height: 54px;
-  background: #ff0000;
-  border-bottom: 1px solid #000;
-  position: fixed;
-  top: 0;
-  left: 0; }
-
-.container {
-  height: 3000px;
-  background: linear-gradient(green, yellow); }
-
-.outer {
-  height: 400px;
-  width: 100%;
-  position: relative;
-  border: 1px solid #fff; }
-
-.box1 {
-  width: 100%;
-  height: 100%;
-  background: #ff0000;
-  position: fixed;
-  z-index: 1; }
-
-.box2 {
-  width: 100%;
-  height: 100%;
-  background: #00ff00;
-  position: fixed;
-  z-index: 2; }
-
-.box3 {
-  width: 100%;
-  height: 100%;
-  background: #0000ff;
-  position: fixed;
-  z-index: 3; }
+  .row .col {
+    z-index: 2;
+    display: flex;
+    flex: 1;
+    position: relative;
+    border: 1px solid #ff0000; }
+    .row .col:first-child {
+      text-align: right; }
+    .row .col img {
+      max-height: 300px; }
+    .row .col h2 {
+      color: #fff;
+      border: 1px solid #ff0000;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      font-size: 3rem;
+      transform: translateY(-50%); }
+    .row .col p {
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #ff0000;
+      display: block;
+      font-size: .8rem; }
+      .row .col p.abs {
+        position: absolute;
+        bottom: -10px; }
+    @media only screen and (min-width: 600px) {
+      .row .col img {
+        max-height: 400px; }
+      .row .col p {
+        font-size: 1rem; }
+      .row .col h2 {
+        font-size: 5rem; } }
+  .row .bg {
+    position: absolute;
+    height: 70%;
+    width: 100%;
+    background: #000;
+    border: 1px solid #ff0000;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%); }

@@ -3,41 +3,23 @@
   <head>
     <meta charset="UTF-8">
     <title>title</title>
+    <link href="./css/app.css" rel="stylesheet" type="text/css">
   </head>
   <body>
   
-  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDh1JDtXvtHA-oy34Y2OHRv9i2fUNMFEqk",
-      authDomain: "test-project-866c8.firebaseapp.com",
-      databaseURL: "https://test-project-866c8.firebaseio.com",
-      projectId: "test-project-866c8",
-      storageBucket: "test-project-866c8.appspot.com",
-      messagingSenderId: "287191156079"
-    };
-    firebase.initializeApp(config);
 
-    // Get a reference to the database service
-	//var myUserId = firebase.auth().currentUser.uid;
-	var docRef = db.collection("events");
+<div class="row">
+  <div class="col">
+    <img src="http://via.placeholder.com/350x400">
+  </div>
+  <div class="col">
+    <h2>hello</h2>
+    <p class="abs">test</p>
+  </div>
+  <div class="bg"></div>
+</div>
 
-docRef.get().then(function(doc) {
-    if (doc.exists) {
-        console.log("Document data:", doc.data());
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-}).catch(function(error) {
-    console.log("Error getting document:", error);
-});
-
-
-  </script>
-
-
-
+  <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
   </body>
 </html>
