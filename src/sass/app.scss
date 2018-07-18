@@ -1,8 +1,17 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
 .box {
 	height:1200px;
+	background: #efefef;
 }
 ul {
+	padding: 0;
+	margin: 0;
 	li {
+		padding: 0;
+		margin: 0;
 		border-top: 1px solid #ccc;
 		height: 701px;
 		background-position: center 0px;
@@ -10,20 +19,10 @@ ul {
 		background-size: 217px 701px;
 		background-attachment: fixed;
 		display: block;
-		&:nth-child(1) {
-			background-image: url(../images/krystalrae-2015-spring-outfit-1-900px.jpg);
-		}
-		&:nth-child(2) {
-			background-image: url(../images/krystalrae-2015-spring-outfit-2-900px.jpg);
-		}
-		&:nth-child(3) {
-			background-image: url(../images/krystalrae-2015-spring-outfit-3-900px.jpg);
-		}
-		&:nth-child(4) {
-			background-image: url(../images/krystalrae-2015-spring-outfit-4-900px.jpg);
-		}
-		&:nth-child(5) {
-			background-image: url(../images/krystalrae-2015-spring-outfit-5-900px.jpg);
+		@for $i from 1 to 6 {
+			&:nth-child(#{$i}) {
+				background-image: url(../images/krystalrae-2015-spring-outfit-#{$i}-900px.jpg);
+			}
 		}
 	}
 }

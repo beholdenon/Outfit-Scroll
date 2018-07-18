@@ -1,21 +1,31 @@
-.box {
-  height: 1200px; }
+html, body {
+  padding: 0;
+  margin: 0; }
 
-ul li {
-  border-top: 1px solid #ccc;
-  height: 701px;
-  background-position: center 0px;
-  background-repeat: no-repeat no-repeat;
-  background-size: 217px 701px;
-  background-attachment: fixed;
-  display: block; }
-  ul li:nth-child(1) {
-    background-image: url(../images/krystalrae-2015-spring-outfit-1-900px.jpg); }
-  ul li:nth-child(2) {
-    background-image: url(../images/krystalrae-2015-spring-outfit-2-900px.jpg); }
-  ul li:nth-child(3) {
-    background-image: url(../images/krystalrae-2015-spring-outfit-3-900px.jpg); }
-  ul li:nth-child(4) {
-    background-image: url(../images/krystalrae-2015-spring-outfit-4-900px.jpg); }
-  ul li:nth-child(5) {
-    background-image: url(../images/krystalrae-2015-spring-outfit-5-900px.jpg); }
+.box {
+  height: 1200px;
+  background: #efefef; }
+
+ul {
+  padding: 0;
+  margin: 0; }
+  ul li {
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #ccc;
+    height: 701px;
+    background-position: center 0px;
+    background-repeat: no-repeat no-repeat;
+    background-size: 217px 701px;
+    background-attachment: fixed;
+    display: block; }
+    ul li:nth-child(1) {
+      background-image: url(../images/krystalrae-2015-spring-outfit-1-900px.jpg); }
+    ul li:nth-child(2) {
+      background-image: url(../images/krystalrae-2015-spring-outfit-2-900px.jpg); }
+    ul li:nth-child(3) {
+      background-image: url(../images/krystalrae-2015-spring-outfit-3-900px.jpg); }
+    ul li:nth-child(4) {
+      background-image: url(../images/krystalrae-2015-spring-outfit-4-900px.jpg); }
+    ul li:nth-child(5) {
+      background-image: url(../images/krystalrae-2015-spring-outfit-5-900px.jpg); }

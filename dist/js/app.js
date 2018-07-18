@@ -1,20 +1,25 @@
 $(function() {
-	var topOffset1 = $("li").eq(0).offset().top;
-	var topOffset2 = $("li").eq(4).offset().top + $("li").eq(4).height();
-	$( window ).scroll(function() {
-		var pos1 = $(window).scrollTop() - topOffset1;
-		var pos2 = $(window).scrollTop() - topOffset2;
+	var w = $(window);
+	var firstItem = $("li").eq(0);
+	var lastItem = $("li").eq( $("li").length - 1 );
+	var offset1 = firstItem.offset().top;
+	var offset2 = lastItem.offset().top + lastItem.height();
+	w.scroll(function() {
+		var wScrollTop = w.scrollTop();
+		var pos1 = wScrollTop - offset1;
+		var pos2 = wScrollTop - offset2;
+
 	  	if(pos1 < 0) {
-	  		$("li").eq(0).css("background-position", "center " +  (Math.abs(pos1) - 10) + "px");
+	  		firstItem.css("background-position", "center " +  (Math.abs(pos1) - 10) + "px");
 	  	}
 	  	else {
-	  		$("li").eq(0).css("background-position", "center 0px");
+	  		firstItem.css("background-position", "center 0px");
 	  	}
 	  	if(pos2 > -700) {
-	  		$("li").eq(4).css("background-position", "center " +  (-(pos2) - 701) + "px");
+	  		lastItem.css("background-position", "center " +  (-(pos2) - 701) + "px");
 	  	}
 	  	else {
-	  		$("li").eq(4).css("background-position", "center 0px");
+	  		lastItem.css("background-position", "center 0px");
 	  	}
 	});
 
